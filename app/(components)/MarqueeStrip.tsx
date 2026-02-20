@@ -24,25 +24,24 @@ export default function MarqueeStrip({ images }: { images: string[] }) {
         transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
       >
         {list.map((src, i) => (
-          <li key={i} className="relative h-full aspect-[4/5] shrink-0">
-            <div
-              className="relative h-full w-full overflow-hidden rounded-xl shadow-sm"
-              style={{
-                filter: "blur(2.5px) saturate(0.7) brightness(0.9)",
-              }}
-            >
-              <Image
-                src={src}
-                alt={`Gallery image ${i + 1}`}
-                fill
-                className="object-cover"
-                sizes="(min-width:1024px) 160px, (min-width:768px) 140px, 120px"
-                priority={i < 6}
-              />
-              {/* fog overlay on each image */}
-              <div className="pointer-events-none absolute inset-0 bg-black/30 z-10"></div>
-            </div>
-          </li>
+	<li key={i} className="shrink-0">
+  	  <div
+ 	   className="relative w-[120px] md:w-[140px] lg:w-[160px] aspect-[4/5] overflow-hidden 	   rounded-xl shadow-sm"
+    	   style={{
+               filter: "blur(2.5px) saturate(0.7) brightness(0.9)",
+            }}
+          >
+           <Image
+           src={src}
+           alt={`Gallery image ${i + 1}`}
+           fill
+           className="object-cover"
+           priority={i < 6}
+           >
+         {/* fog overlay on each image */}
+         <div className="pointer-events-none absolute inset-0 bg-black/30 z-10"></div>
+        </div>
+       </li>
         ))}
       </motion.ul>
     </div>
