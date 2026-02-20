@@ -1,5 +1,5 @@
 export const content = {
-  name: "Nathalya",
+  name: "Luna",
   title: "Model & Creator",
   tagline: "Welcome.. find my spicy links here. Will you send me a message babe?",
   ctas: [
